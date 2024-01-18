@@ -54,6 +54,16 @@
                     <input type="text" class="form-control" id="age" name="age">
                 </div>
                 <div class="mb-3">
+                    <label class="form-label">Team</label>
+                    <select name="team" id="team" class="form-control">
+                        <option value="Amigos">Amigos</option>
+                        <option value="Dazzlers">Dazzlers</option>
+                        <option value="Challengers">Challengers</option>
+                        <option value="Falcons">Falcons</option>
+                        <option value="Explorers">Explorers</option>
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label class="form-label">
                         <h5>Batting</h5>
                     </label>

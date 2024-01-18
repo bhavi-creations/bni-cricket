@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'] ?? '';
     $phone = $_POST['phone'] ?? '';
     $age = $_POST['age'] ?? '';
+    $team = $_POST['team'] ?? '';
     $batting = isset($_POST['batting']) ? implode(', ', $_POST['batting']) : '';
     $bowling = isset($_POST['bowling']) ? implode(', ', $_POST['bowling']) : '';
     $wicketKeeper = isset($_POST['wicket_keeper']) ? 'Yes' : 'No';
@@ -30,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Port = 587;
 
         // Recipients
-        $mail->setFrom('bnafalconscricket@gmail.com', 'BNA Falcons Cricket'); // Your Gmail email and name
-        $mail->addAddress('bnafalconscricket@gmail.com', 'BNA Falcons Cricket'); // Recipient's email and name
+        $mail->setFrom('bnafalconscricket@gmail.com', 'BNI Cricket'); // Your Gmail email and name
+        $mail->addAddress('bnafalconscricket@gmail.com', 'BNI Cricket'); // Recipient's email and name
          // Attach photo
          if (!empty($_FILES['photo']['tmp_name'])) {
             $mail->addAttachment($_FILES['photo']['tmp_name'], $_FILES['photo']['name']);
@@ -44,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p><strong>Name:</strong> $name</p>
             <p><strong>Phone:</strong> $phone</p>
             <p><strong>Age:</strong> $age</p>
+            <p><strong>Team:</strong> $team</p>
             <p><strong>Batting:</strong> $batting</p>
             <p><strong>Bowling:</strong> $bowling</p>
             <p><strong>Wicket Keeper:</strong> $wicketKeeper</p>
